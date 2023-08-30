@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Doctor',
       theme: appTheme,
       debugShowCheckedModeBanner: false,
-      initialRoute: RouteName.homePage,
+      initialRoute: RouteName.BottomNavi,
       onGenerateRoute: Routes.generateRoute,
     );
   }
