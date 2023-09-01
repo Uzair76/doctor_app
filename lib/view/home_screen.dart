@@ -1,12 +1,15 @@
+
 import 'package:doctor_app/constant/App_Colors.dart';
-import 'package:doctor_app/utils/components/custom_round_button.dart';
-import 'package:doctor_app/view/screens/account.dart';
+import 'package:doctor_app/utils/components/routes/routes_name.dart';
+
+import 'package:doctor_app/view/screens/doctor_screen.dart';
 import 'package:doctor_app/view/screens/inbox.dart';
 import 'package:doctor_app/view/screens/notification.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/doctors_slider.dart';
 import '../constant/images_constant.dart';
+import '../view_modal/home_modal.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -146,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
              CustomList(),
               const Text(
-                "Diseases",
+                "Doctors",
                 style: TextStyle(
                   color: AppColors.kPrimaryTextBlackColor,
                   fontSize: 22,
@@ -214,93 +217,116 @@ class CustomList extends StatelessWidget {
 class CustomSlider extends StatelessWidget {
 
    CustomSlider({super.key});
- List<CardItem> items=[
-   const CardItem(
-     AssetImage: ImagesConst.ksliderimg1,
-     title: 'doctor',
-     subtitle: '43'
-   ),
 
-   CardItem(
-       AssetImage: ImagesConst.ksliderimg2,
-       title: 'ahmad',
-       subtitle: '54'
-   ),
-
-   CardItem(
-       AssetImage: ImagesConst.ksliderimg3,
-       title: 'khani',
-       subtitle: '54'
-   ),
-
-   CardItem(
-       AssetImage: ImagesConst.ksliderimg4,
-       title: 'Axis',
-       subtitle: '45'
-   ),
-   CardItem(
-       AssetImage: ImagesConst.ksliderimg5,
-       title: 'feroz',
-       subtitle: '32'
-   ),
- ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 300.0,
       child: ListView.separated(
         padding: EdgeInsets.all(16),
+
         scrollDirection: Axis.horizontal,
-          itemCount: items.length,
+          itemCount: destinations.length,
           separatorBuilder: (context,_)=>SizedBox(width: 12,),
-          itemBuilder: (context,index)=>buildCard(items: items[index]),
-           ),
+          itemBuilder: (BuildContext context,int index){
+            Popular populars = destinations[index];
+            return GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => DoctorsScreen(Popular: populars),
+                ),
+              ),
+              child: Container(
+                margin: const EdgeInsets.only(right: 15),
+                width: 230,
+                //color: Colors.red,
+                child: Container(
+                  width: 230,
+                  height: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: Column(
+                    children: [
+                      Hero(
+                        // for animation of image to next screen
+                        tag: populars.imageUrl,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image(
+                                height: 160.0,
+                                width: 180.0,
+                                image: AssetImage(populars.imageUrl),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text(populars.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(populars.subtitle,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+                  
+                ),
+                
+              ),
+            );
+
+          }
+     ),
     );
-  }
-  Widget buildCard(
-   {required CardItem items}
-      )=>Container(
-    height: 256,
+  }}
+//   Widget buildCard(
+//    {required CardItem item}
+//       )=>Container(
+//     height: 256,
+//      child: Column(
+//       children: [
+//         Expanded(child: AspectRatio(
+//             aspectRatio: 4/3,
+//             child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(20),
+//                 child: Material(
+//                   child: Builder(
+//                     builder: (context)=>Ink.image(
+//                     image: AssetImage(ImagesConst.ksliderimg3),
+//                   child: InkWell(
+//                     onTap: (){
+//                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DoctorsScreen(items: item)));
+//                     },
+//                   ),),)
+//                 )
+//             ))),
+//         Text(
+//           item.title,style: TextStyle(
+//           fontSize: 20,color: AppColors.kPrimaryTextBlackColor
+//         ),
+//
+//         ),
+//    Text(
+//    item.subtitle,style: TextStyle(
+//    fontSize: 18,color: AppColors.kPrimaryTextBlackColor
+//    ),
+//    )
+//         ],
+//     ),
+//
+//   );
+// }
 
-    child: Column(
-      children: [
-        Expanded(child: AspectRatio(
-            aspectRatio: 4/3,
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(items.AssetImage)))),
-        Text(
-          items.title,style: TextStyle(
-          fontSize: 20,color: AppColors.kPrimaryTextBlackColor
-        ),
 
-        ),
-   Text(
-   items.subtitle,style: TextStyle(
-   fontSize: 18,color: AppColors.kPrimaryTextBlackColor
-   ),
-   )
-      ],
-    ),
-
-  );
-}
-
-class CardItem {
-  final String AssetImage;
-  final String title;
-  final String subtitle;
-  const CardItem({
-    required this.AssetImage,
-    required this.title,
-    required this.subtitle
-});
-}
 
 
 
 
 //****************************************************************************************************************
+
+
 
 

@@ -1,5 +1,6 @@
 import 'package:doctor_app/utils/components/routes/routes_name.dart';
 import 'package:doctor_app/view/home_screen.dart';
+import 'package:doctor_app/view/screens/doctor_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../bottom_nav_bar.dart';
@@ -12,11 +13,13 @@ class Routes {
     //route for Home Screen
       case RouteName.homePage:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-
     //route for Bottom Navigation Bar
       case RouteName.BottomNavi:
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
 
+      //
+      // case RouteName.DoctorsScreen:
+      //   return MaterialPageRoute(builder: (_) =>  DoctorsScreen(CardItem: Card));
 
 
     //Statement to show as default route
