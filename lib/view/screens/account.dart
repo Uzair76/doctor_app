@@ -15,7 +15,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kGrey,
-
       body: Stack(
         children: [
           Positioned(
@@ -132,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
               CustomListButton( startIcon: Icons.person,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Profile'
                   , onTap: (){}
               ),
 
@@ -148,19 +147,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               const SizedBox(height: 10,),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.help_center,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Help'
                   , onTap: (){}
               ),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.mail,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Contact Us'
                   , onTap: (){}
               ),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.report,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Report issues'
                   , onTap: (){}
               ),
               const Padding(
@@ -174,19 +173,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.privacy_tip,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Privacy Policy'
                   , onTap: (){}
               ),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.interpreter_mode_outlined,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Term & conditions'
                   , onTap: (){}
               ),
-              CustomListButton( startIcon: Icons.person,
+              CustomListButton( startIcon: Icons.logout,
                   endIcon: Icons.arrow_forward_ios_outlined,
-                  title:'Asim Taj'
+                  title:'Log Out'
                   , onTap: (){}
               ),
              SizedBox(height: 10,),
