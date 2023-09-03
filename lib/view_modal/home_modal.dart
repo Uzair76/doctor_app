@@ -1,22 +1,4 @@
 import '../constant/images_constant.dart';
-// class items {
-//   final String AssetImage;
-//   final String title;
-//   final String subtitle;
-//   const CardItem({
-//     required this.AssetImage,
-//     required this.title,
-//     required this.subtitle
-//   });
-// }
-//
-// List<CardItem> items=[
-//   const CardItem(
-//       AssetImage: 'ImagesConst.ksliderimg1',
-//       title: 'doctor',
-//       subtitle: '43'
-//   ),
-
 
 
 class Popular {
@@ -24,7 +6,6 @@ class Popular {
   String title;
   String subtitle;
 
-  //List<Activity> activities;
 
   Popular({
     required this.imageUrl,

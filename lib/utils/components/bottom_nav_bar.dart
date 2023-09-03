@@ -1,8 +1,8 @@
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:doctor_app/view/home_screen.dart';
 import 'package:doctor_app/view/screens/account.dart';
-import 'package:doctor_app/view/screens/inbox.dart';
-import 'package:doctor_app/view/screens/notification.dart';
+import 'package:doctor_app/view/screens/medical_record_screen.dart';
+import 'package:doctor_app/view/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/App_Colors.dart';
@@ -18,8 +18,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    NotificationScreen(),
-    InboxScreen(),
+    AppointmentScreen(),
+    MedicalRecordScreen(),
     ProfileScreen(),
   ];
   @override
@@ -59,12 +59,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   text: 'Home',
                 ),
                 GButton(
-                  icon: Icons.notifications,
-                  text: 'Notifica',
+                  icon: Icons.medical_services_outlined,
+                  text: 'Appointment',
                 ),
                 GButton(
 
-                  text: 'Inbox',
+                  text: 'Record',
                   icon: Icons.inbox,
                 ),
                 GButton(

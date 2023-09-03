@@ -3,8 +3,8 @@ import 'package:doctor_app/constant/App_Colors.dart';
 import 'package:doctor_app/utils/components/routes/routes_name.dart';
 
 import 'package:doctor_app/view/screens/doctor_screen.dart';
-import 'package:doctor_app/view/screens/inbox.dart';
-import 'package:doctor_app/view/screens/notification.dart';
+import 'package:doctor_app/view/screens/medical_record_screen.dart';
+import 'package:doctor_app/view/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/doctors_slider.dart';

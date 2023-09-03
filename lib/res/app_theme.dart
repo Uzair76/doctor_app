@@ -5,9 +5,12 @@ final appTheme= ThemeData(
   primarySwatch: AppColors.primaryMaterialColor,
   scaffoldBackgroundColor: AppColors.kWhite ,
   appBarTheme: const AppBarTheme(
+
     color: AppColors.kWhite,
     centerTitle: true,
+
     titleTextStyle: TextStyle(
+
       fontSize: 20,
       color: AppColors.kPrimaryTextBlackColor)),
   textTheme:  const TextTheme(
