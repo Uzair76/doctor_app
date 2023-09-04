@@ -1,13 +1,13 @@
 
 import 'package:doctor_app/constant/App_Colors.dart';
-import 'package:doctor_app/utils/components/routes/routes_name.dart';
+//import 'package:doctor_app/utils/components/routes/routes_name.dart';
 
 import 'package:doctor_app/view/screens/doctor_screen.dart';
-import 'package:doctor_app/view/screens/medical_record_screen.dart';
-import 'package:doctor_app/view/screens/appointment_screen.dart';
+//import 'package:doctor_app/view/screens/medical_record_screen.dart';
+//import 'package:doctor_app/view/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../constant/doctors_slider.dart';
+//import '../constant/doctors_slider.dart';
 import '../constant/images_constant.dart';
 import '../view_modal/home_modal.dart';
 
@@ -26,16 +26,17 @@ class _HomeScreenState extends State<HomeScreen> {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
-      appBar: AppBar(
-        // automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(
-            Icons.menu,
-            color: AppColors.kBlack,
-          ),
-        ),
 
+
+      appBar: AppBar(
+
+        iconTheme: const IconThemeData(color: Colors.black),
+
+        // leading: const Icon(
+        //   Icons.menu,
+        //   color: AppColors.kBlack,
+        // ),
+//automaticallyImplyLeading: true,
         title: const Text(
           'DocCare',
           style: TextStyle(color: AppColors.kPrimaryTextBlackColor),
@@ -53,7 +54,94 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
         ],
       ),
-      body:
+        drawer: Drawer(
+          child: ListView(
+            children: const [
+              DrawerHeader(
+                // decoration: BoxDecoration(
+                //   color: Colors.teal
+                // ),
+                child: Center(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.black,
+                        radius: 50,
+                      //  backgroundImage: AssetImage(ImagesConst.ksliderimg3),
+                        // child:
+                        // Image(image: AssetImage(ImagesConst.ksliderimg3),
+                        // ),
+                      ),
+
+                      SizedBox(height: 10,),
+                      Text('User Name',style: TextStyle(fontWeight: FontWeight.bold),),
+
+                    ],
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.black,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+
+              ),
+              ListTile(
+                leading: Icon(Icons.policy_outlined,color: AppColors.kBlack,),
+                title: Text('Privacy Policy',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.location_history,color: AppColors.kBlack,),
+                title: Text('Change Loacation',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.medical_services_outlined,color: AppColors.kBlack,),
+                title: Text('Your Appointment',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.search,color: AppColors.kBlack,),
+                title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.search,color: AppColors.kBlack,),
+                title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.tab,color: AppColors.kBlack,),
+                title: Text('Health Blogs',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+              Divider(
+                color: Colors.black,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+
+              ),
+              Spacer(),
+              ListTile(
+                leading: Icon(Icons.logout,color: AppColors.kBlack,),
+                title: Text('Logout',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+              ),
+            ],
+          ),
+        ),
+
+
+
+
+
+
+
+
+    body:
       SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -75,14 +163,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ),
               Container(
-                padding: EdgeInsets.only(top: 8,bottom: 16),
+                padding: const EdgeInsets.only(top: 8,bottom: 16),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteF7,
                   borderRadius: BorderRadius.circular(8)
                 ),
-                child: Row(
+                child: const Row(
                   children: [
                     Icon(Icons.backpack_outlined),
                     SizedBox(width: 10,),
