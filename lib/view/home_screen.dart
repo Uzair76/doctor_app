@@ -35,11 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
             color: AppColors.kBlack,
           ),
         ),
-
+       //Page Title
         title: const Text(
           'DocCare',
           style: TextStyle(color: AppColors.kPrimaryTextBlackColor),
         ),
+
+        //notification
         actions: <Widget>[
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
@@ -48,11 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: const Icon(
                   Icons.notifications,
                   size: 26.0,
-                  color: AppColors.kBlack,
+                  color: AppColors.kPrimaryColor,
                 ),
               )),
         ],
       ),
+
+
+      //body
       body:
       SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -68,86 +73,103 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller: searchController,
                     decoration: InputDecoration(
                       suffixIcon: const Icon(Icons.search),
-                      hintText: 'search',
+                      hintText: 'Search',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     )),
               ),
+
+              //My Appointment
               Container(
-                padding: EdgeInsets.only(top: 8,bottom: 16),
+                padding: const EdgeInsets.only(top: 8,bottom: 16),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteF7,
                   borderRadius: BorderRadius.circular(8)
                 ),
-                child: Row(
+                child: const Row(
                   children: [
-                    Icon(Icons.backpack_outlined),
+                    SizedBox(width: 10,),
+                    Icon(Icons.pending_actions_sharp),
                     SizedBox(width: 10,),
                     Text("My Appointment",style: TextStyle(fontSize: 20),)
                   ],
                 ),
               ),
+
+
+            //Section2
+
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 8),
-                child: Container(
-                  height: 130,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: AppColors.kPrimaryColor,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 8.0, top: 18),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Looking for \nSpecialist Doctor?",
-                                  style: TextStyle(
-                                      color: AppColors.kPrimaryTextWhiteColor,
-                                      fontSize: 24),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "join with an online consultation",
-                                  style: TextStyle(color: AppColors.kGrey),
-                                )
-                              ],
-                            ),
+                child: Expanded(
+                  child: Container(
+                    height: 150,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                        color: AppColors.kPrimaryColor,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+
+                        Padding(
+                          padding: EdgeInsets.only(left: 14.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                                  Text(
+                                    "Looking for the Best\nDoctors?",
+                                    style: TextStyle(
+                                        color: AppColors.kPrimaryTextWhiteColor,
+                                        fontSize: 22),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "Join for an Online Consultation",
+                                    style: TextStyle(color: AppColors.kGrey,),
+                                  )
+
+                            ],
                           ),
-                        ],
-                      ),
-                      Row(
-                        children: [
+                        ),
 
-                          Image(
+                        Padding(
+                          padding: EdgeInsets.only(top: 10.0),
+                          child: Image(
 
-                              width: 150,
-                              fit: BoxFit.cover,
-                              image: AssetImage(ImagesConst.ksliderimg1)),
-                        ],
-                      )
-                    ],
+                                  width: 111,
+                                  height: 140,
+                                  image: AssetImage(ImagesConst.Sectiontwo)),
+                        ),
+
+                      ],
+                    ),
                   ),
                 ),
               ),
+
+              //Categories
+              const SizedBox(height: 10,),
               const Text(
-                "Categories",
+                "",
                 style: TextStyle(
                   color: AppColors.kPrimaryTextBlackColor,
                   fontSize: 22,
                 ),
               ),
+
              CustomList(),
+
+              //Doctors
+              const SizedBox(height: 30,),
               const Text(
                 "Doctors",
                 style: TextStyle(
@@ -155,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 22,
                 ),
               ),
-              CustomSlider()
+              const CustomSlider()
 
             ],
           ),
@@ -216,19 +238,19 @@ class CustomList extends StatelessWidget {
 
 class CustomSlider extends StatelessWidget {
 
-   CustomSlider({super.key});
+   const CustomSlider({super.key});
 
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300.0,
       child: ListView.separated(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
 
         scrollDirection: Axis.horizontal,
           itemCount: destinations.length,
-          separatorBuilder: (context,_)=>SizedBox(width: 12,),
+          separatorBuilder: (context,_)=>const SizedBox(width: 12,),
           itemBuilder: (BuildContext context,int index){
             Popular populars = destinations[index];
             return GestureDetector(
@@ -238,31 +260,36 @@ class CustomSlider extends StatelessWidget {
                   builder: (_) => DoctorsScreen(Popular: populars),
                 ),
               ),
-              child: Container(
-                margin: const EdgeInsets.only(right: 15),
-                width: 230,
+              // child: Container(
+                // margin: const EdgeInsets.only(right: 15),
+                // width: 230,
                 //color: Colors.red,
                 child: Container(
-                  width: 230,
-                  height: 200,
+                  height: 230,
+                  width: 150,
                   decoration: BoxDecoration(
+                    color: AppColors.kWhiteF7,
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Column(
+
                     children: [
+
                       Hero(
                         // for animation of image to next screen
                         tag: populars.imageUrl,
+
                         child: ClipRRect(
+
                           borderRadius: BorderRadius.circular(20.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 12.0, bottom: 12.2),
                               child: Image(
-                                height: 160.0,
-                                width: 180.0,
+                                height:190,
+                                width: 150,
                                 image: AssetImage(populars.imageUrl),
-                                fit: BoxFit.cover,
+
                               ),
                             ),
                           ),
@@ -275,7 +302,7 @@ class CustomSlider extends StatelessWidget {
                   
                 ),
                 
-              ),
+              // ),
             );
 
           }

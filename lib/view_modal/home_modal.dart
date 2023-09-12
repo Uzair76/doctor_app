@@ -18,7 +18,7 @@ class Popular {
 //destination data
 List<Popular> destinations = [
   Popular(
-    imageUrl: ImagesConst.ksliderimg1,
+    imageUrl: ImagesConst.DocotorBlueShirt,
     title: 'Number 1',
     subtitle: '43',
 
