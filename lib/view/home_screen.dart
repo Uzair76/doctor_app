@@ -1,4 +1,5 @@
 
+import 'package:doctor_app/assets/fonts/font_size.dart';
 import 'package:doctor_app/constant/App_Colors.dart';
 //import 'package:doctor_app/utils/components/routes/routes_name.dart';
 
@@ -8,6 +9,7 @@ import 'package:doctor_app/view/screens/doctor_screen.dart';
 import 'package:flutter/material.dart';
 
 //import '../constant/doctors_slider.dart';
+import '../assets/fonts/app_fonts.dart';
 import '../constant/images_constant.dart';
 import '../view_modal/home_modal.dart';
 
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
-<<<<<<< HEAD
+
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         leading: GestureDetector(
@@ -37,22 +39,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
        //Page Title
-=======
 
 
-      appBar: AppBar(
-
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black, ),
 
         // leading: const Icon(
         //   Icons.menu,
         //   color: AppColors.kBlack,
         // ),
 //automaticallyImplyLeading: true,
->>>>>>> fae07c5b4e6f36b9a6478c59222616cf0e61569d
+
         title: const Text(
           'DocCare',
-          style: TextStyle(color: AppColors.kPrimaryTextBlackColor),
+          style: TextStyle(color: AppColors.kPrimaryTextBlackColor, fontFamily: AppFonts.title, fontSize: FontSize.title),
         ),
 
         //notification
@@ -69,12 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
         ],
       ),
-<<<<<<< HEAD
 
 
-      //body
-      body:
-=======
+      //Drawer
         drawer: Drawer(
           child: ListView(
             children: const [
@@ -155,15 +151,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
 
-
-
-
-
-
-
-
     body:
->>>>>>> fae07c5b4e6f36b9a6478c59222616cf0e61569d
+
       SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -187,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               //My Appointment
               Container(
-                padding: const EdgeInsets.only(top: 8,bottom: 16),
+                padding: const EdgeInsets.only(top: 32,bottom: 32),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -232,7 +221,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "Looking for the Best\nDoctors?",
                                     style: TextStyle(
                                         color: AppColors.kPrimaryTextWhiteColor,
-                                        fontSize: 22),
+                                        fontFamily: AppFonts.h1SemiBold,
+                                        fontSize: FontSize.h2),
                                   ),
                                   SizedBox(
                                     height: 5,
