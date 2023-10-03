@@ -49,9 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
         // ),
 //automaticallyImplyLeading: true,
 
-        title: const Text(
+        title:  Text(
           'DocCare',
-          style: TextStyle(color: AppColors.kPrimaryTextBlackColor, fontFamily: AppFonts.title, fontSize: FontSize.title),
+          style: AppFonts().Headings(28, AppColors.kPrimaryTextBlackColor, FontWeight.w900),
         ),
 
         //notification
@@ -176,19 +176,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
               //My Appointment
               Container(
-                padding: const EdgeInsets.only(top: 32,bottom: 32),
+                padding: const EdgeInsets.only(top: 5,bottom: 5),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteF7,
                   borderRadius: BorderRadius.circular(8)
                 ),
-                child: const Row(
+                child:  Row(
                   children: [
-                    SizedBox(width: 10,),
-                    Icon(Icons.pending_actions_sharp),
-                    SizedBox(width: 10,),
-                    Text("My Appointment",style: TextStyle(fontSize: 20),)
+                    SizedBox(width: 5,),
+                    Icon(Icons.pending_actions_sharp, color: AppColors.kPrimaryColor),
+                    SizedBox(width:5,),
+                    Text("My Appointment",style: AppFonts().Headings(19, AppColors.kPrimaryTextBlackColor, FontWeight.w500),)
                   ],
                 ),
               ),
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //Section2
 
               Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 8),
+                padding: const EdgeInsets.only(top: 25, bottom: 8),
                 child: Expanded(
                   child: Container(
                     height: 150,
@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         color: AppColors.kPrimaryColor,
                         borderRadius: BorderRadius.circular(8)),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -219,12 +219,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                   Text(
                                     "Looking for the Best\nDoctors?",
-                                    style: TextStyle(
-                                        color: AppColors.kPrimaryTextWhiteColor,
-                                        fontFamily: AppFonts.h1SemiBold,
-                                        fontSize: FontSize.h2),
+                                    style: AppFonts().Headings(21, AppColors.kPrimaryTextWhiteColor, FontWeight.w600 ),
                                   ),
-                                  SizedBox(
+                            SizedBox(
                                     height: 5,
                                   ),
                                   Text(
