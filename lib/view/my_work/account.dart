@@ -1,7 +1,9 @@
 import 'package:doctor_app/constant/App_Colors.dart';
+import 'package:doctor_app/utils/components/routes/routes_name.dart';
+import 'package:doctor_app/view/my_work/edit_profile.dart';
+import 'package:doctor_app/view/my_work/faqs.dart';
+import 'package:doctor_app/view/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../utils/components/routes/routes_name.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -148,47 +150,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       CustomListButton(
                           startIcon: Icons.person,
                           endIcon: Icons.arrow_forward_ios_outlined,
-                          title: 'Profile',
-                          onTap: () {}),
-                      const Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.help,
-                              size: 35,
-                              color: AppColors.kPrimaryColor,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Contact and Help",
-                              style: TextStyle(
-                                  color: AppColors.kBlack,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            )
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                          title: 'Edit Profile',
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> EditProfile()));
+                          }),
+                      // const Padding(
+                      //   padding: const EdgeInsets.only(top: 15.0),
+                      //   child: Row(
+                      //     children: [
+                      //       Icon(
+                      //         Icons.help,
+                      //         size: 35,
+                      //         color: AppColors.kPrimaryColor,
+                      //       ),
+                      //       SizedBox(
+                      //         width: 10,
+                      //       ),
+                      //       Text(
+                      //         "Contact and Help",
+                      //         style: TextStyle(
+                      //             color: AppColors.kBlack,
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 20),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
                       CustomListButton(
-                          startIcon: Icons.help_center,
+                          startIcon: Icons.medical_information_outlined,
                           endIcon: Icons.arrow_forward_ios_outlined,
-                          title: 'Help',
-                          onTap: () {}),
+                          title: 'My Appointment',
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AppointmentScreen()));}),
                       CustomListButton(
-                          startIcon: Icons.mail,
+                          startIcon: Icons.privacy_tip_outlined,
                           endIcon: Icons.arrow_forward_ios_outlined,
-                          title: 'Contact Us',
-                          onTap: () {}),
+                          title: 'Privacy Policy',
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> FactScreen()));
+                          }),
                       CustomListButton(
-                          startIcon: Icons.report,
+                          startIcon: Icons.health_and_safety_outlined,
                           endIcon: Icons.arrow_forward_ios_outlined,
-                          title: 'Report issues',
+                          title: 'Health Blog',
                           onTap: () {}),
                       const Padding(
                         padding: const EdgeInsets.only(top: 15.0),
@@ -245,33 +252,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 
 class CustomListButton extends StatelessWidget {
-  final IconData startIcon, endIcon;
+  final IconData? startIcon, endIcon;
   final String title;
   final VoidCallback onTap;
   const CustomListButton(
       {super.key,
-      required this.startIcon,
-      required this.endIcon,
+       this.startIcon,
+       this.endIcon,
       required this.title,
       required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 60,
-      margin: const EdgeInsets.only(top: 10),
-      padding: const EdgeInsets.only(top: 5),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
-      child: ListTile(
-        dense: true,
-        leading: Icon(startIcon,color: AppColors.kPrimaryColor,),
-        title: Text(
-          title,
-          style: TextStyle(color: AppColors.kPrimaryColor, fontSize: 16),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        height: 60,
+        margin: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 5),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        child: ListTile(
+          dense: true,
+          leading: Icon(startIcon,color: AppColors.kPrimaryColor,),
+          title: Text(
+            title,
+            style: TextStyle(color: AppColors.kPrimaryColor, fontSize: 16),
+          ),
+          trailing: Icon(endIcon),
         ),
-        trailing: Icon(endIcon),
       ),
     );
   }

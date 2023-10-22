@@ -28,6 +28,85 @@ class _HomeScreenState extends State<HomeScreen> {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            DrawerHeader(
+              // decoration: BoxDecoration(
+              //   color: Colors.teal
+              // ),
+              child: Center(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.black,
+                      radius: 50,
+                      //  backgroundImage: AssetImage(ImagesConst.ksliderimg3),
+                      // child:
+                      // Image(image: AssetImage(ImagesConst.ksliderimg3),
+                      // ),
+                    ),
+
+                    SizedBox(height: 10,),
+                    Text('User Name',style: TextStyle(fontWeight: FontWeight.bold),),
+
+                  ],
+                ),
+              ),
+            ),
+            Divider(
+              color: Colors.black,
+              thickness: 1,
+              indent: 20,
+              endIndent: 20,
+
+            ),
+            ListTile(
+              leading: Icon(Icons.policy_outlined,color: AppColors.kBlack,),
+              title: Text('Privacy Policy',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.location_history,color: AppColors.kBlack,),
+              title: Text('Change Loacation',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.medical_services_outlined,color: AppColors.kBlack,),
+              title: Text('Your Appointment',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.search,color: AppColors.kBlack,),
+              title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.search,color: AppColors.kBlack,),
+              title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.tab,color: AppColors.kBlack,),
+              title: Text('Health Blogs',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+            Divider(
+              color: Colors.black,
+              thickness: 1,
+              indent: 20,
+              endIndent: 20,
+
+            ),
+            Spacer(),
+            ListTile(
+              leading: Icon(Icons.logout,color: AppColors.kBlack,),
+              title: Text('Logout',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+            ),
+          ],
+        ),
+      ),
 
       appBar: AppBar(
         // automaticallyImplyLeading: false,
@@ -43,11 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         iconTheme: const IconThemeData(color: Colors.black, ),
 
-        // leading: const Icon(
-        //   Icons.menu,
-        //   color: AppColors.kBlack,
-        // ),
-//automaticallyImplyLeading: true,
+
 
         title:  Text(
           'DocCare',
@@ -68,88 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
         ],
       ),
-
-
-      //Drawer
-        drawer: Drawer(
-          child: ListView(
-            children: const [
-              DrawerHeader(
-                // decoration: BoxDecoration(
-                //   color: Colors.teal
-                // ),
-                child: Center(
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.black,
-                        radius: 50,
-                      //  backgroundImage: AssetImage(ImagesConst.ksliderimg3),
-                        // child:
-                        // Image(image: AssetImage(ImagesConst.ksliderimg3),
-                        // ),
-                      ),
-
-                      SizedBox(height: 10,),
-                      Text('User Name',style: TextStyle(fontWeight: FontWeight.bold),),
-
-                    ],
-                  ),
-                ),
-              ),
-              Divider(
-                color: Colors.black,
-                thickness: 1,
-                indent: 20,
-                endIndent: 20,
-
-              ),
-              ListTile(
-                leading: Icon(Icons.policy_outlined,color: AppColors.kBlack,),
-                title: Text('Privacy Policy',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              ListTile(
-                leading: Icon(Icons.location_history,color: AppColors.kBlack,),
-                title: Text('Change Loacation',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              ListTile(
-                leading: Icon(Icons.medical_services_outlined,color: AppColors.kBlack,),
-                title: Text('Your Appointment',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              ListTile(
-                leading: Icon(Icons.search,color: AppColors.kBlack,),
-                title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              ListTile(
-                leading: Icon(Icons.search,color: AppColors.kBlack,),
-                title: Text('Search Doctor',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              ListTile(
-                leading: Icon(Icons.tab,color: AppColors.kBlack,),
-                title: Text('Health Blogs',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-              Divider(
-                color: Colors.black,
-                thickness: 1,
-                indent: 20,
-                endIndent: 20,
-
-              ),
-              Spacer(),
-              ListTile(
-                leading: Icon(Icons.logout,color: AppColors.kBlack,),
-                title: Text('Logout',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-
-              ),
-            ],
-          ),
-        ),
 
     body:
 
@@ -185,65 +178,62 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child:  Row(
                   children: [
-                    SizedBox(width: 5,),
-                    Icon(Icons.pending_actions_sharp, color: AppColors.kPrimaryColor),
-                    SizedBox(width:5,),
+                    const SizedBox(width: 5,),
+                    const Icon(Icons.pending_actions_sharp, color: AppColors.kPrimaryColor),
+                    const SizedBox(width:5,),
                     Text("My Appointment",style: AppFonts().Headings(19, AppColors.kPrimaryTextBlackColor, FontWeight.w500),)
                   ],
                 ),
               ),
 
-
             //Section2
 
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 8),
-                child: Expanded(
-                  child: Container(
-                    height: 150,
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                        color: AppColors.kPrimaryColor,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
+                child: Container(
+                  height: 150,
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(
+                      color: AppColors.kPrimaryColor,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
 
-                        Padding(
-                          padding: EdgeInsets.only(left: 14.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 14.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
 
-                                  Text(
-                                    "Looking for the Best\nDoctors?",
-                                    style: AppFonts().Headings(21, AppColors.kPrimaryTextWhiteColor, FontWeight.w600 ),
-                                  ),
-                            SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Join for an Online Consultation",
-                                    style: TextStyle(color: AppColors.kGrey,),
-                                  )
+                                Text(
+                                  "Looking for the Best\nDoctors?",
+                                  style: AppFonts().Headings(21, AppColors.kPrimaryTextWhiteColor, FontWeight.w600 ),
+                                ),
+                          const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text(
+                                  "Join for an Online Consultation",
+                                  style: TextStyle(color: AppColors.kGrey,),
+                                )
 
-                            ],
-                          ),
+                          ],
                         ),
+                      ),
 
-                        Padding(
-                          padding: EdgeInsets.only(top: 10.0),
-                          child: Image(
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: Image(
 
-                                  width: 111,
-                                  height: 140,
-                                  image: AssetImage(ImagesConst.Sectiontwo)),
-                        ),
+                                width: 111,
+                                height: 140,
+                                image: AssetImage(ImagesConst.Sectiontwo)),
+                      ),
 
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -387,8 +377,8 @@ class CustomSlider extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(populars.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                      Text(populars.subtitle,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                      Text(populars.title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(populars.subtitle,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                     ],
                   ),
                   

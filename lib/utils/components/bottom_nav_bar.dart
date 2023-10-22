@@ -1,6 +1,6 @@
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:doctor_app/view/home_screen.dart';
-import 'package:doctor_app/view/screens/account.dart';
+import 'package:doctor_app/view/my_work/account.dart';
 import 'package:doctor_app/view/screens/medical_record_screen.dart';
 import 'package:doctor_app/view/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
